@@ -16,3 +16,10 @@ messages(num_results = , user_id = "ferris.andrewg@gmail.com")
 
 #Read a specific message
 message("INSERT MESSAGE ID HERE", user_id = "ferris.andrewg@gmail.com", format = "full")
+
+#Read a bunch of messages
+num_messages <- 10
+message_list <- messages(num_results = num_messages, label_ids = "INBOX", user_id = "ferris.andrewg@gmail.com")
+for (i in 1:num_messages){
+  print(message(id = paste(message_list[[1]][[1]][[i]][1]), user_id = "ferris.andrewg@gmail.com", format = "full"))
+}
